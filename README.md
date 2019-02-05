@@ -7,6 +7,9 @@ A command line tool for managing Flatiron Cohorts, streamlining education team w
 * Generating and publishing lecture content
 * Editing a cohorts learn.co homepage
 
+## System Requirements
+* Git CLI Tools authenticated with a Flatiron GitHub account
+
 ## Installation
 
 ```bash
@@ -44,7 +47,9 @@ npm install -g flatiron-cohort-manager
   - `assignments`- opens a learn.co assignments search for the active cohort.
     - Note: you must use the cohorts name (e.g, houston-web-111918)  in the assignment title for this feature to work
   - `home`- opens the active cohort's home page in GitHub
-  - `lecture-code` opens the active cohort's lecture code repository on GitHub.
+  - `lecture-code`- opens the active cohort's lecture code repository on GitHub.
+  - `curriculum`- opens the learn.co curriculum page, used for deploying labs
+  - `wiki`- opens the Flatiron Education Team Wiki in GitHub
 - The following resources are recommended, and can be added using `link`:
   - `aa`- opens the attitude-apptitude sheet  (link can be found in the cohorts instructor slack channel)
   - `attendance`- opens the attendance sheet for the active cohort (link can be found in the cohorts slack channel)
@@ -65,14 +70,6 @@ npm install -g flatiron-cohort-manager
 - Arguments
   - <variable>: The name of the variable to set
   - <value>: The value to set the variable to
-
-#### `curriculum`
-
-- Opens the learn.co curriculum page, used for deploying labs
-
-#### `wiki`
-
-- Opens the Flatiron Education Team Wiki in GitHub
 
 #### `reset`
 
