@@ -1,0 +1,21 @@
+{
+  "name": "flatiron-cohort-manager",
+  "version": "0.0.1",
+  "bin": {
+    "cohorts": "./bin/index.js",
+    "cohort": "./bin/index.js"
+  },
+  "description": "A manager for Flatiron School Cohorts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.19.0",
+    "ncp": "^2.0.0",
+    "promise-fs": "^2.0.1",
+    "prompt-list": "^3.2.0"
+  }
+}
