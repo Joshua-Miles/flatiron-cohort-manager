@@ -1,30 +1,26 @@
-const readline = require('readline')
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+const prompts = require('prompts')
 
 module.exports = {
     log: console.log,
     warn: console.warn,
     error: console.error,
-    prompt: (question, options) => new Promise( resolve => {
+    prompt: (question, options) => new Promise( async resolve => {
+        let response;
         if(options){
-            var List = require('prompt-list');
-            var list = new List({
+            response = await prompts({
+                type: 'select',
+                name: 'value',
                 message: question,
-                choices: options
-            });
-            
-            // async
-            list.ask(function(answer) {
-                resolve(answer);
+                choices: options.map( option => ({ title: option, value: option }))
             });
         } else {
-            rl.question(question, (answer) => {
-                resolve(answer)
-            })
+            response = await prompts({
+                name: 'value',
+                type: 'text',
+                message: question
+            });
         }
+        resolve(response.value)
     }),
-    close: () => rl.close()
+    close: () => null
 }
