@@ -49,7 +49,6 @@ npm install -g flatiron-cohort-manager
   - `assignments`- opens a learn.co assignments search for the active cohort.
     - Note: you must use the cohorts name (e.g, houston-web-111918)  in the assignment title for this feature to work
   - `home`- opens the active cohort's home page in GitHub
-  - `lecture-code`- opens the active cohort's lecture code repository on GitHub.
   - `curriculum`- opens the learn.co curriculum page, used for deploying labs
   - `wiki`- opens the Flatiron Education Team Wiki in GitHub
 - The following resources are recommended, and can be added using `link`:
