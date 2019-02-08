@@ -26,17 +26,17 @@ npm install -g flatiron-cohort-manager
   * <learnID>: the ID of the cohorts batch in learn. You can get this from the URL of the cohort after selecting them in organizations
   * <togetherID>: the ID of the cohort in Learn Together. You can get this from the URL as well
 
-#### `new lecture [lectureNumber]`
+#### `new-lecture [lectureNumber]`
 
 - Creates a new lecture within the lectue code for the active cohort. You can initialize an empty lecture folder, or copy from another lecture. Opens the lecture folder with your selected code editor
 - Arguments
   - <lectureNumber> (optional): if provided, sets an arbitrary number for the lecture (the next number in sequence is the default)
 
-#### `edit lecture`
+#### `edit-lecture`
 
 - Opens a selected lecture with your default code editor
 
-#### `edit home`
+#### `edit-home`
 
 - Opens the active cohorts learn.co home page using your default code editor.
 
