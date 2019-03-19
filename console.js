@@ -20,6 +20,7 @@ module.exports = {
                 message: question
             });
         }
+        if(response.value === undefined)     process.exit(1);
         resolve(response.value)
     }),
     close: () => null

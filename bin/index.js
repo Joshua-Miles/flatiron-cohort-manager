@@ -12,4 +12,9 @@ for( let command in commands){
             })
 }
     
+process.on('SIGINT', function() {
+    // some other closing procedures go here
+    process.exit(1);
+  });
+
 program.parse(process.argv)
