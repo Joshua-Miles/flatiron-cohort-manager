@@ -8,14 +8,21 @@
   "description": "A manager for Flatiron School Cohorts",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-swift": "swift build --configuration=release --static-swift-stdlib -Xswiftc '-target' -Xswiftc 'x86_64-apple-macosx10.12' && mv .build/release/aperture ."
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "aperture": "^5.2.0",
     "commander": "^2.19.0",
+    "ejs": "^3.1.2",
+    "googleapis": "^49.0.0",
+    "handbrake-js": "^5.0.0",
     "ncp": "^2.0.0",
+    "open": "^7.0.3",
     "promise-fs": "^2.0.1",
-    "prompts": "^2.0.1"
+    "prompts": "^2.0.1",
+    "server-destroy": "^1.0.1"
   }
 }
