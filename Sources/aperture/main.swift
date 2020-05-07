@@ -62,11 +62,11 @@ let encoder = JSONEncoder()
 
 switch CLI.arguments.first {
 case "list-screens":
-  print(try encoder.encode(Aperture.Devices.screen()), to: .standardError)
+  print(String(data: try encoder.encode(Aperture.Devices.screen()), encoding: .utf8))
   exit(0)
 case "list-audio-devices":
   // Uses stderr because of unrelated stuff being outputted on stdout
-  print(try encoder.encode(Aperture.Devices.audio()), to: .standardError)
+  print(String(data: try encoder.encode(Aperture.Devices.audio()), encoding: .utf8))
   exit(0)
 case .none:
   showUsage()
