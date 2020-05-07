@@ -31,7 +31,7 @@ public final class Aperture: NSObject {
 	) throws {
 		self.destination = destination
 		session = AVCaptureSession()
-		session.sessionPreset = AVCaptureSession.Preset.low
+		session.sessionPreset = AVCaptureSession.Preset.cif352x288
 
 		self.output = output
 
