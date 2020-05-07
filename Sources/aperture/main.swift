@@ -1,6 +1,5 @@
 import Foundation
 import AVFoundation
-import Aperture
 
 struct Options: Decodable {
   let destination: URL
@@ -31,13 +30,9 @@ func record() throws {
     print("R")
   }
 
-  recorder.onFinish = {
+  recorder.onFinish = { (error: Error?) -> Void in
+    print(error, to: .standardError)
     exit(0)
-  }
-
-  recorder.onError = {
-    print($0, to: .standardError)
-    exit(1)
   }
 
   CLI.onExit = {
@@ -65,11 +60,11 @@ func showUsage() {
 
 switch CLI.arguments.first {
 case "list-screens":
-  print(try toJson(Devices.screen()), to: .standardError)
+  print(try toJson(Aperture.Devices.screen()), to: .standardError)
   exit(0)
 case "list-audio-devices":
   // Uses stderr because of unrelated stuff being outputted on stdout
-  print(try toJson(Devices.audio()), to: .standardError)
+  print(try toJson(Aperture.Devices.audio()), to: .standardError)
   exit(0)
 case .none:
   showUsage()

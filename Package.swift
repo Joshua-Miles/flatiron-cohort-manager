@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-  name: "ApertureCLI",
+  name: "aperture",
   platforms: [
     .macOS(.v10_12)
   ],
@@ -10,7 +10,7 @@ let package = Package(
     .executable(
       name: "aperture",
       targets: [
-        "ApertureCLI"
+        "aperture"
       ]
     )
   ],
@@ -19,10 +19,10 @@ let package = Package(
 //   ],
   targets: [
     .target(
-      name: "ApertureCLI",
-      dependencies: [
-        "Aperture"
-      ]
+      name: "aperture"
+      // dependencies: [
+      //   "Aperture"
+      // ]
     )
   ]
 )
