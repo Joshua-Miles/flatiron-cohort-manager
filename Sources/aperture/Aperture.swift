@@ -90,7 +90,7 @@ public final class Aperture: NSObject {
 	*/
 	public convenience init(
 		destination: URL,
-		framesPerSecond: Int = 1,
+		framesPerSecond: Int = 40,
 		cropRect: CGRect? = nil,
 		showCursor: Bool = true,
 		highlightClicks: Bool = false,
