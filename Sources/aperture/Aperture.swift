@@ -69,7 +69,7 @@ public final class Aperture: NSObject {
 		// TODO: Find a way to detect hardware encoding support.
 		// Hardware encoding is supported on 6th gen Intel processor or newer.
 		if #available(macOS 13, *) {
-			output.setOutputSettings([AVVideoCodecKey: AVVideoCodecType.jpeg, ], for: output.connection(with: .video)!)
+			output.setOutputSettings([AVVideoCodecKey: AVVideoCodecType.jpeg, AVVideoQualityKey: 0.5], for: output.connection(with: .video)!)
 		}
 
 		super.init()
