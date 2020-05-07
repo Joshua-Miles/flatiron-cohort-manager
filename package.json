@@ -9,7 +9,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-swift": "swift build --configuration=release --static-swift-stdlib -Xswiftc '-target' -Xswiftc 'x86_64-apple-macosx10.12' && mv .build/release/aperture ."
+    "build-swift": "swift build --configuration=release --static-swift-stdlib -Xswiftc '-target' -Xswiftc 'x86_64-apple-macosx10.12' && mv .build/release/aperture ./lib/fileUtils/"
   },
   "author": "",
   "license": "ISC",
