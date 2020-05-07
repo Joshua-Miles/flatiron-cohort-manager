@@ -31,7 +31,7 @@ public final class Aperture: NSObject {
 	) throws {
 		self.destination = destination
 		session = AVCaptureSession()
-		session.sessionPreset = AVCaptureSession.Preset.hd1280x720
+		session.sessionPreset = AVCaptureSession.Preset.high
 
 		self.output = output
 
@@ -69,7 +69,7 @@ public final class Aperture: NSObject {
 		// TODO: Find a way to detect hardware encoding support.
 		// Hardware encoding is supported on 6th gen Intel processor or newer.
 		if #available(macOS 13, *) {
-			output.setOutputSettings([AVVideoCodecKey: AVVideoCodecType.jpeg, AVVideoQualityKey: 0.5], for: output.connection(with: .video)!)
+			output.setOutputSettings([AVVideoCodecKey: AVVideoCodecType.h264], for: output.connection(with: .video)!)
 		}
 
 		super.init()
