@@ -64,14 +64,14 @@ switch CLI.arguments.first {
 case "list-screens":
   let shit = try encoder.encode(Aperture.Devices.screen())
   if shit != nil {
-    print(String(data: shit, encoding: .utf8), to: .standardError)
+    print(String(data: shit, encoding: .utf8)!, to: .standardError)
   }
   exit(0)
 case "list-audio-devices":
   // Uses stderr because of unrelated stuff being outputted on stdout
   let shit = try encoder.encode(Aperture.Devices.audio())
   if shit != nil {
-    print(String(data: shit, encoding: .utf8), to: .standardError)
+    print(String(data: shit, encoding: .utf8)!, to: .standardError)
   }
   exit(0)
 case .none:
