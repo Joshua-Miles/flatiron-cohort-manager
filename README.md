@@ -14,7 +14,6 @@ A command line tool for managing Flatiron Cohorts, streamlining education team w
 npm install -g flatiron-cohort-manager
 ```
 
-> The keyfile used by the cohort manager to authenticate with YouTube is only good for 8 uploads per day. If you intend to use the tool long term, please procure your own keyfile (https://developers.google.com/youtube/registering_an_application), and replace the oauth2.keys.json file within the `My-Cohorts` folder. Note that the keyfile cannot be procured using a Flatiron GSuite account, as these have an un-alterable quota of 0 video uploads
 
 ## Documentation
 
@@ -44,6 +43,8 @@ npm install -g flatiron-cohort-manager
 - Ends with a prompt to begin recording the lecture. When you select the prompt by hitting enter, your screen will begin recording until you select the prompt to start. The recording will then be optimized and uploaded to YouTube, before being linked in the learn.co home page. Lastly, the lecture code will be committed and pushed to GitHub
 
 > There are a handful of undocumented commands, including `open-lecture` and `record-lecture`, and `upload-lecture`, which `give-lecture` calls internally, but can be used to do each of the above steps piece by piece when necessary.
+
+> The keyfile used by the cohort manager to authenticate with YouTube is only good for 8 uploads per day. If you intend to use the tool long term, please procure your own keyfile (https://developers.google.com/youtube/registering_an_application), and replace the oauth2.keys.json file within the `My-Cohorts` folder. Note that the keyfile cannot be procured using a Flatiron GSuite account, as these have an un-alterable quota of 0 video uploads
 
 #### `edit-home`
 
