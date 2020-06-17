@@ -2,10 +2,8 @@
 
 A command line tool for managing Flatiron Cohorts, streamlining education team workflows such as:
 
-* Checking a cohorts lab progress
-* Managing cohort specific links (like AA and attedance google sheets)
-* Generating and publishing lecture content
-* Editing a cohorts learn.co homepage
+* Checking a cohorts lab progress and assignments
+* Generating and publishing lecture content, including lecture code, recordings, and learn.co homepage
 
 ## System Requirements
 * Git CLI Tools authenticated with a Flatiron GitHub account
@@ -16,45 +14,49 @@ A command line tool for managing Flatiron Cohorts, streamlining education team w
 npm install -g flatiron-cohort-manager
 ```
 
+> The keyfile used by the cohort manager to authenticate with YouTube is only good for 8 uploads per day. If you intend to use the tool long term, please procure your own keyfile (https://developers.google.com/youtube/registering_an_application), and replace the oauth2.keys.json file within the `My-Cohorts` folder. Note that the keyfile cannot be procured using a Flatiron GSuite account, as these have an un-alterable quota of 0 video uploads
+
 ## Documentation
 
-#### `install <name> <learnID> <togetherID>`
+#### `install <name> <learnID>`
 
 * Creates a new cohort folder in your root, cloning lecture code and creating the default associated weblinks. This command will set your active cohort to the one created.
 * Arguments
   * <name>: the name of the cohort, e.g. `houston-web-111919`
   * <learnID>: the ID of the cohorts batch in learn. You can get this from the URL of the cohort after selecting them in organizations
-  * <togetherID>: the ID of the cohort in Learn Together. You can get this from the URL as well
+
 
 #### `select-cohort`
 * Opens a menu to select a new active cohort
 
+#### `new-lecture`
 
-#### `new-lecture [lectureNumber]`
-
-- Creates a new lecture within the lectue code for the active cohort. You can initialize an empty lecture folder, or copy from another lecture. Opens the lecture folder with your selected code editor
-- Arguments
-  - <lectureNumber> (optional): if provided, sets an arbitrary number for the lecture (the next number in sequence is the default)
+- Creates a new lecture template. Opens the lecture folder with your selected code editor. Prompts the selection of a module when creating. This is saved with the lecture code so that the lecture can be linked in the learn.co homepage correctly when published
 
 #### `edit-lecture`
 
-- Opens a selected lecture with your default code editor
+- Opens a selected lecture template with your default code editor
+
+#### `give-lecture`
+
+- Copys a lecture template into the lecture code repository of the active cohort
+- Opens the copied lecture code with your selected code editor
+- Ends with a prompt to begin recording the lecture. When you select the prompt by hitting enter, your screen will begin recording until you select the prompt to start. The recording will then be optimized and uploaded to YouTube, before being linked in the learn.co home page. Lastly, the lecture code will be committed and pushed to GitHub
+
+> There are a handful of undocumented commands, including `open-lecture` and `record-lecture`, and `upload-lecture`, which `give-lecture` calls internally, but can be used to do each of the above steps piece by piece when necessary.
 
 #### `edit-home`
 
-- Opens the active cohorts learn.co home page using your default code editor.
+- Opens the ejs template for the active cohorts learn.co home page using your default code editor.
 
 #### `open <resource>`
 
 - Opens an external resource related to the active cohort given the resource name. If the selected resource has not been linked to the active cohort, you will be prompted to link the resource
 - The following resources are supported by default:
   - `progress`- opens the active cohort's lab progress
-  - `together`- opens the active cohort's Learn Together page
   - `assignments`- opens a learn.co assignments search for the active cohort.
     - Note: you must use the cohorts name (e.g, houston-web-111918)  in the assignment title for this feature to work
   - `home`- opens the active cohort's home page in GitHub
-  - `curriculum`- opens the learn.co curriculum page, used for deploying labs
-  - `wiki`- opens the Flatiron Education Team Wiki in GitHub
 - The following resources are recommended, and can be added using `link`:
   - `aa`- opens the attitude-apptitude sheet  (link can be found in the cohorts instructor slack channel)
   - `attendance`- opens the attendance sheet for the active cohort (link can be found in the cohorts slack channel)

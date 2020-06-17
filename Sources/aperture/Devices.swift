@@ -22,13 +22,13 @@ extension Aperture {
 		}
 
 		public struct Audio: Hashable, Codable {
-			public let id: String
-			public let name: String
+			public let id: NSString
+			public let name: NSString
 		}
 
 		public struct IOS: Hashable, Codable {
-			public let id: String
-			public let name: String
+			public let id: NSString
+			public let name: NSString
 		}
 
 		public static func screen() -> [Screen] {
