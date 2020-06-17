@@ -1,6 +1,6 @@
 {
   "name": "flatiron-cohort-manager",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "bin": {
     "cohorts": "./bin/index.js",
     "cohort": "./bin/index.js"

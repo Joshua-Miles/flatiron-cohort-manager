@@ -2,6 +2,7 @@
 const program = require('commander')
 const commands = require('../commands')
 const console = require('../console')
+const lib = require('../lib')
 
 for( let command in commands){
     program
@@ -17,4 +18,6 @@ process.on('SIGINT', function() {
     process.exit(1);
   });
 
-program.parse(process.argv)
+require('../lib/installation')(lib)
+  .then( () => program.parse(process.argv))
+
